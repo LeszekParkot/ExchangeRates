@@ -1,0 +1,88 @@
+.hide{
+  display: none;
+}
+
+html{
+  font-family: "Arial", sans-serif;
+  background-color: #88aa70;
+}
+
+.container{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  max-width: 50rem;
+}
+
+.tableHeader{
+  background-color: #444;
+  color: #fff;
+  font-size: 1.25rem;
+  font-style: italic;
+  text-align: center;
+  div{
+    padding: 0.5rem 0.5rem;
+    border-right: 2px #000 solid;
+    &:nth-child(4){
+      border-right: none;
+    }
+  }
+}
+
+.row:nth-child(1n + 2){
+  &:nth-child(odd){
+    background-color: #ddd;
+  }
+  &:nth-child(even){
+    background-color: #ccc;
+  }
+  img{
+    width: 1.5rem;
+    margin-right: 0.75rem;
+  }
+  div{
+    border-right: 2px white solid;
+    border-bottom: 2px white solid;
+    padding: 0.5rem 0.5rem;
+    &:not(.hide){
+      display: flex;
+      align-items: center;
+    }
+    &.casch_amount{
+      font-weight: bold;
+      border-right: none;
+      justify-content: center;
+    }
+    &.currency{
+      font-weight: bold;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .container{
+    text-align: center;
+    .tableHeader{
+      display: none;
+    }
+    .hide{
+      display: block;
+    }
+    .row{
+      margin-bottom: 1rem;
+      border-radius: 1rem;
+      div{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-right: none;
+        border-bottom: 2px white solid;
+        &:nth-child(7), &:nth-child(8){
+          border-bottom: none;
+        }
+      }
+    }
+    img{
+      display: none;
+    }
+  }
+}
